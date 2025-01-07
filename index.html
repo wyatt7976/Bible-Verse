@@ -5,15 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Random Bible Verse</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Make the page take up the full height and center the content */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      margin-top: 50px;
+      background-color: #f7f7f7;
+      font-family: Arial, sans-serif;
+    }
+    /* Style the verse text */
+    #verse {
+      font-size: 3vw; /* Adjust size to fit the screen */
+      padding: 20px;
+      word-wrap: break-word;
     }
   </style>
 </head>
 <body>
-  <h1>Random Bible Verse</h1>
   <p id="verse">Loading verse...</p>
   <script>
     // Fetch a random Bible verse from an API
@@ -21,7 +32,7 @@
       .then(response => response.json())
       .then(data => {
         const verse = data[0];
-        document.getElementById('verse').innerText =  `${verse.bookname} ${verse.chapter}:${verse.verse} - "${verse.text}"`;
+        document.getElementById('verse').innerText = `${verse.bookname} ${verse.chapter}:${verse.verse} - "${verse.text}"`;
       })
       .catch(() => {
         document.getElementById('verse').innerText = 'Sorry, unable to load a verse at the moment.';
