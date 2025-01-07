@@ -10,11 +10,17 @@
       height: 100%;
       margin: 0;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       background-color: #f7f7f7;
       font-family: Arial, sans-serif;
+    }
+    /* Style the cross */
+    .cross {
+      font-size: 10vw; /* Adjust size to fit the screen */
+      margin-bottom: 20px; /* Add space below the cross */
     }
     /* Style the verse text */
     #verse {
@@ -25,6 +31,8 @@
   </style>
 </head>
 <body>
+  <!-- Cross using Unicode symbol -->
+  <div class="cross">✝</div>
   <p id="verse">Loading verse...</p>
   <script>
     // Fetch a random Bible verse from an API
